@@ -13,6 +13,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Canvas extends JPanel {
@@ -28,7 +29,8 @@ public class Canvas extends JPanel {
 	setBackground(new Color(66, 66, 231));
 	setPreferredSize(new Dimension(w, h));
 	setBorder(BorderFactory.createLineBorder(new Color(165, 165, 255), 50));
-	setupBalls(20);
+	int n = Integer.parseInt(JOptionPane.showInputDialog(this, "Liczba pi³ek:"));
+	setupBalls(n);
 	ScheduledExecutorService exec = Executors.newScheduledThreadPool(balls.size());
 	exec.scheduleAtFixedRate(new Runnable() {
 	    @Override

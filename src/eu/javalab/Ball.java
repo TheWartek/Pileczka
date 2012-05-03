@@ -40,7 +40,6 @@ public class Ball extends BufferedImage {
 	
 	Graphics2D g2 = createGraphics();
 	g2.setColor(c);
-	//g2.setColor(Color.white);
 	g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 	g2.fillOval(0, 0, (int)w, (int)h);
 	ScheduledExecutorService exec = Executors.newScheduledThreadPool(1);
